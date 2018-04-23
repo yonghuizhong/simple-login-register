@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function verify() {
+            var xmlhttp;
+            var username;
+            username = document.getElementById("username").value;
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("txt").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "reg_verify.jsp?q=" + username, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+<h2>ajax验证注册</h2>
+<form action="insert.jsp" method="post">
+    <label for="username">用户名</label>
+    <input type="text" name="username" id="username" placeholder="请输入用户名" required="required" onblur="verify()"/><br/>
+    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+    <input type="text" name="password" id="password" placeholder="请输入密码" required="required"/><br/>
+    <input type="submit" name="register" id="register" value="注册"/>
+</form>
+<div id="txt"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    margin-top: 50px;
+    background-color: #607D8B;
+    font-family: "Microsoft Yahei";
+}
+
+h2, form {
+    text-align: center;
+}
+
+input {
+    margin: 6px;
+    width: 300px;
+    height: 35px;
+    font-family: "Microsoft Yahei";
+}
+
+form label:after {
+    content: "*";
+    color: #F44336;
+    font-size: 150%;
+}
+
+#submit, #register {
+    height: 35px;
+    width: 145px;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #2185cf;
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+    color: #fff;
+}
+
+#register_text {
+    color: white;
+    font-size: 10px;
+}
+
+#txt {
+    color: red;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+}
